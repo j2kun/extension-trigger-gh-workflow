@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GitHub Actions Trigger Options</title>
+  <title>GitHub Actions Workflow Trigger Options</title>
 </head>
 <body>
-  <h1>GitHub Actions Trigger Options</h1>
+  <h1>GitHub Actions Workflow Trigger Options</h1>
   <form id="options-form">
     <label for="github-user">GitHub Username:</label>
     <input type="text" id="github-user" name="github-user"><br><br>
-    
+
     <label for="github-repo">GitHub Repository:</label>
     <input type="text" id="github-repo" name="github-repo"><br><br>
-    
-    <label for="workflow-name">Workflow id:</label>
+
+    <label for="workflow-name">Workflow id (e.g., my_workflow.yml):</label>
     <input type="text" id="workflow-name" name="workflow-name"><br><br>
-    
+
     <label for="github-token">GitHub Token:</label>
     <input type="password" id="github-token" name="github-token"><br><br>
-    
+
     <button type="submit">Save</button>
   </form>
   <div id="status"></div>
