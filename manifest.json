@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "GitHub Actions Trigger",
+    "version": "1.0",
+    "description": "Trigger a GitHub Actions workflow with the current page URL",
+    "permissions": ["scripting", "activeTab", "storage"],
+    "action": {
+      "default_title": "Trigger GitHub Action"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "options_page": "options.html",
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://api.github.com"
+    }
+}
