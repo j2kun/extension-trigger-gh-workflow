@@ -2,7 +2,7 @@
 
 A button to trigger a GitHub Actions workflow.
 
-# Usage
+## Usage
 
 From the extensions details page, click "Extension Options" to set the user, repo, worfklow id, and token.
 
@@ -29,3 +29,29 @@ jobs:
 ```
 
 Not going to publish this thing, just load it unpacked in developer mode.
+
+## Tasker analogue
+
+The following Tasker task can be used to do the same thing from a mobile device:
+
+```
+    Task: Add to blogroll
+
+    A1: HTTP Request [
+         Method: POST
+         URL: https://api.github.com/repos/j2kun/math-intersect-programming/actions/workflows/blogroll.yml/dispatches
+         Headers: Accept: application/vnd.github+json
+         Authorization: Bearer %GITHUB_PAT
+         X-GitHub-Api-Version: 2022-11-28
+         Content-Type: application/json
+         Body: {
+           "ref": "main",
+           "inputs": { "url": "%CLIP" }
+         }
+         Timeout (Seconds): 30
+         Trust Any Certificate: On
+         Automatically Follow Redirects: On
+         Use Cookies: On
+         Structure Output (JSON, etc): On ]
+
+```
